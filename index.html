@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>🎉 Happy Birthday Chrestalia Gembreng 🎂</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #ffd1ff, #c2ffd8);
+        background-size: 400% 400%;
+        animation: bg 10s ease infinite;
+        overflow: hidden;
+        font-family: Poppins, sans-serif;
+      }
+
+      @keyframes bg {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .card {
+        width: 90%;
+        max-width: 650px;
+        background: white;
+        padding: 40px;
+        border-radius: 25px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        z-index: 5;
+        animation: pop 1.2s;
+      }
+
+      @keyframes pop {
+        from {
+          transform: scale(0.5);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      h1 {
+        font-family: Pacifico;
+        font-size: 50px;
+        color: #ff4d6d;
+        margin-bottom: 15px;
+      }
+
+      h2 {
+        font-size: 26px;
+        color: #444;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #555;
+      }
+
+      button {
+        margin-top: 30px;
+        padding: 15px 35px;
+        font-size: 18px;
+        border: none;
+        border-radius: 50px;
+        background: #ff4d6d;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        transform: scale(1.08);
+        background: #ff2455;
+      }
+
+      #surprise {
+        margin-top: 30px;
+        display: none;
+        animation: fade 1s;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .cake {
+        font-size: 90px;
+        animation: bounce 1s infinite alternate;
+      }
+
+      @keyframes bounce {
+        to {
+          transform: translateY(-15px);
+        }
+      }
+
+      .heart {
+        position: absolute;
+        font-size: 25px;
+        animation: float 8s linear infinite;
+        opacity: 0.7;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(100vh) rotate(0deg);
+          opacity: 0;
+        }
+        20% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-120vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      footer {
+        margin-top: 30px;
+        font-size: 14px;
+        color: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Happy Birthday! 🎉</h1>
+
+      <h2>Chrestalia Gembreng 💖</h2>
+
+      <p>
+        Semoga di umur yang baru ini kamu selalu diberikan kesehatan,
+        kebahagiaan, rezeki yang melimpah, serta semua impianmu satu per satu
+        bisa terwujud.
+      </p>
+
+      <p style="margin-top: 18px">
+        Terima kasih sudah menjadi orang yang luar biasa. Semoga setiap
+        langkahmu dipenuhi keberuntungan, dan semoga senyummu selalu menjadi
+        alasan dunia terasa lebih indah. ✨🤍
+      </p>
+
+      <button onclick="showSurprise()">Klik untuk Kejutan 🎁</button>
+
+      <div id="surprise">
+        <div class="cake">🎂</div>
+
+        <h2 style="margin-top: 15px; color: #ff4d6d">
+          Selamat Ulang Tahun Chrestalia! 🥳
+        </h2>
+
+        <p style="margin-top: 15px">
+          Semoga tahun ini menjadi tahun terbaikmu. Jangan lupa tetap menjadi
+          dirimu yang ceria, hebat, dan selalu membanggakan. Happy Birthday!! ❤️
+        </p>
+      </div>
+
+      <footer>
+        Made with ❤️ by someone who wishes you all the happiness in the world.
+      </footer>
+    </div>
+
+    <script>
+      function showSurprise() {
+        document.getElementById("surprise").style.display = "block";
+
+        for (let i = 0; i < 80; i++) {
+          let heart = document.createElement("div");
+
+          heart.className = "heart";
+
+          heart.innerHTML = Math.random() > 0.5 ? "❤️" : "💖";
+
+          heart.style.left = Math.random() * 100 + "vw";
+
+          heart.style.animationDuration = 4 + Math.random() * 5 + "s";
+
+          heart.style.fontSize = 15 + Math.random() * 30 + "px";
+
+          document.body.appendChild(heart);
+
+          setTimeout(() => {
+            heart.remove();
+          }, 8000);
+        }
+      }
+    </script>
+  </body>
+</html>
